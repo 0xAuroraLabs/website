@@ -17,6 +17,10 @@
     {
       "src": "assets/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -51,6 +55,10 @@
     {
       "src": "/terms",
       "dest": "/terms.html"
+    },
+    {
+      "src": "/api/config",
+      "dest": "/api/config.js"
     }
   ]
 } 

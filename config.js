@@ -3,38 +3,21 @@ let firebaseConfig = null;
 let MVP_LAUNCH_DATE = null;
 let configLoaded = false;
 
-// Production configuration - will be overridden by Vercel environment variables
-const productionConfig = {
-  firebaseConfig: {
-    apiKey: "AIzaSyBPsPMf2CIHc34yxx8L_-YFRMs5I2hC4Ok",
-    authDomain: "auroral-labs.firebaseapp.com",
-    projectId: "auroral-labs",
-    storageBucket: "auroral-labs.firebasestorage.app",
-    messagingSenderId: "318398920981",
-    appId: "1:318398920981:web:78af828889e6428225511c",
-    measurementId: "G-DES6GBE94P"
-  },
-  mvpLaunchDate: "2025-09-30T00:00:00+05:30"
-};
-
-// Load configuration for production (Vercel) or development
+// Load configuration from environment variables via API
 async function loadConfiguration() {
   try {
-    // Try to load from API endpoint first (for local development with server)
+    // Fetch configuration from API endpoint
     const response = await fetch('/api/config');
     if (response.ok) {
       const config = await response.json();
       firebaseConfig = config.firebaseConfig;
       MVP_LAUNCH_DATE = config.mvpLaunchDate;
-      console.log('✅ Configuration loaded from API (development mode)');
+      console.log('✅ Configuration loaded from Vercel environment variables');
     } else {
       throw new Error('API not available');
     }
   } catch (error) {
-    // Use production configuration (for Vercel deployment)
-    firebaseConfig = productionConfig.firebaseConfig;
-    MVP_LAUNCH_DATE = productionConfig.mvpLaunchDate;
-    console.log('✅ Production configuration loaded (Vercel ready)');
+    console.log('⚠️ Using fallback configuration (client-side)');
   }
   
   configLoaded = true;
