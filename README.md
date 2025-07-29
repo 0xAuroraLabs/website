@@ -1,0 +1,145 @@
+# Auroral Labs - Pet Health Monitoring Website
+
+## 🚀 Production Ready for GitHub + Vercel
+
+This application is now production-ready and can be deployed to Vercel directly from GitHub.
+
+## 📋 Quick Deployment
+
+### 1. Push to GitHub
+```bash
+git add .
+git commit -m "Production ready Auroral Labs website"
+git push origin main
+```
+
+### 2. Deploy to Vercel
+1. Go to [vercel.com](https://vercel.com)
+2. Connect your GitHub repository
+3. Import the project
+4. Add environment variables in Vercel dashboard
+5. Deploy!
+
+## 🔧 Environment Variables for Vercel
+
+Add these environment variables in your Vercel project settings:
+
+```
+FIREBASE_API_KEY=AIzaSyBPsPMf2CIHc34yxx8L_-YFRMs5I2hC4Ok
+FIREBASE_AUTH_DOMAIN=auroral-labs.firebaseapp.com
+FIREBASE_PROJECT_ID=auroral-labs
+FIREBASE_STORAGE_BUCKET=auroral-labs.firebasestorage.app
+FIREBASE_MESSAGING_SENDER_ID=318398920981
+FIREBASE_APP_ID=1:318398920981:web:78af828889e6428225511c
+FIREBASE_MEASUREMENT_ID=G-DES6GBE94P
+MVP_LAUNCH_DATE=2025-09-30T00:00:00+05:30
+```
+
+## 🔥 Firebase Setup
+
+### Deploy Firestore Security Rules
+```bash
+# Install Firebase CLI
+npm install -g firebase-tools
+
+# Login to Firebase
+firebase login
+
+# Initialize Firebase (select your project)
+firebase init firestore
+
+# Deploy the security rules
+firebase deploy --only firestore:rules
+```
+
+## 🎯 Features
+
+- ✅ **Production Ready**: Works with Vercel, Netlify, or any static hosting
+- ✅ **MVP Countdown Timer**: Beautiful animated countdown to launch date
+- ✅ **Firebase Integration**: Secure form data collection
+- ✅ **Contact Forms**: Send messages to Firestore database
+- ✅ **Notify Forms**: Collect email addresses for launch notifications
+- ✅ **Responsive Design**: Works on all devices
+- ✅ **No Server Required**: Pure static site with client-side Firebase
+
+## 📁 Project Structure
+
+```
+aurorallabs/
+├── vercel.json              # Vercel configuration
+├── .gitignore               # Git ignore rules
+├── firestore.rules          # Firebase security rules
+├── config.js                # Production configuration
+├── js/script.js             # Main JavaScript
+├── css/styles.css           # Styles including timer
+├── index.html               # Home page
+├── contact.html             # Contact page
+├── app.html                 # App page
+├── product.html             # Product page
+└── README.md                # This file
+```
+
+## 🛡️ Security
+
+- Firebase credentials are configured via environment variables
+- Client-side only receives public Firebase config
+- Firestore rules restrict access to specific collections
+- No sensitive data in code repository
+
+## 🎨 Timer Styling
+
+The MVP countdown timer features:
+- Glassmorphism design with backdrop blur
+- Pulsing animation
+- Responsive design for all screen sizes
+- Rocket emoji icon
+- Professional typography
+
+## 🔥 Firebase Collections
+
+- `notifyEmails`: Stores email addresses from notify forms
+- `contactMessages`: Stores contact form submissions
+
+## 🚀 Local Development
+
+### Option 1: Static Hosting (Recommended)
+```bash
+# Use any static server (Live Server, Python, etc.)
+# The app will work with fallback configuration
+```
+
+### Option 2: With Node.js Server
+```bash
+npm install
+npm start
+```
+
+## 📝 Troubleshooting
+
+### Firebase Permission Errors
+1. Deploy the `firestore.rules` file using Firebase CLI
+2. Ensure your Firebase project is properly configured
+3. Check that all environment variables are set in Vercel
+
+### Timer Not Showing
+1. Check browser console for errors
+2. Verify environment variables are set in Vercel
+3. Ensure `MVP_LAUNCH_DATE` is in correct format
+
+### Forms Not Working
+1. Check Firebase initialization in browser console
+2. Verify Firestore rules are deployed
+3. Ensure all Firebase environment variables are set in Vercel
+
+## 🌐 Deployment URLs
+
+After deployment, your site will be available at:
+- Vercel: `https://your-project.vercel.app`
+- Custom domain: `https://aurorallabs.com/` (if configured)
+
+## 📞 Support
+
+For issues with:
+- **Vercel Deployment**: Check Vercel logs and environment variables
+- **Firebase**: Verify Firestore rules and project configuration
+- **Website**: Check browser console for JavaScript errors 

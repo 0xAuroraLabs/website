@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to notifyEmails collection
+    match /notifyEmails/{document} {
+      allow read, write: if true;
+    }
+    
+    // Allow read/write access to contactMessages collection
+    match /contactMessages/{document} {
+      allow read, write: if true;
+    }
+    
+    // Default rule - deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+} 

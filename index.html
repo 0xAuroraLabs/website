@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auroral Labs | Pet Health Monitoring</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo-container">
+        <img src="assets/images/logo.png" alt="Auroral Labs Logo" class="logo">
+        <span class="logo-text">Auroral Labs</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="app.html">App</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Advanced Pet Health Monitoring</h1>
+        <p>Innovative real-time vitals tracking, early disease detection, and activity monitoring for pets using AI and IoT technology.</p>
+        <div id="mvp-countdown"></div>
+        <a href="product.html" class="btn">Learn More</a>
+        <a href="#features" class="btn btn-outline">Features</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1560743173-567a3b5658b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBldCUyMGhlYWx0aHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Dog wearing smart collar">
+      </div>
+    </div>
+  </section>
+
+  <!-- Investor Section -->
+  <section class="investor" style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 2rem 5%;">
+    <div class="section-title">
+      <h2 style="font-size: 2.8rem; color: #0a8778; margin-bottom: 1.5rem;">Become Part of Our Success Story</h2>
+      <p style="font-size: 1.2rem; max-width: 900px; margin: 0 auto 2rem; line-height: 1.8;">We're currently in MVP development stage and actively seeking visionary investors to join our journey. With a potential market size of $20B+ and growing at 6.1% annually, our innovative pet health technology represents an exceptional opportunity to transform pet healthcare.</p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto 3rem;">
+      <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+        <i class="fas fa-chart-line" style="font-size: 3rem; color: #0a8778; margin-bottom: 1rem;"></i>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">High Growth Potential</h3>
+        <p>Pet tech industry is experiencing unprecedented growth with increasing pet ownership worldwide.</p>
+      </div>
+      <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+        <i class="fas fa-lightbulb" style="font-size: 3rem; color: #0a8778; margin-bottom: 1rem;"></i>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Innovative Technology</h3>
+        <p>Our AI-powered health detection system uses cutting-edge technology with patent-pending features.</p>
+      </div>
+      <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+        <i class="fas fa-users" style="font-size: 3rem; color: #0a8778; margin-bottom: 1rem;"></i>
+        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Expert Team</h3>
+        <p>Led by talented professionals with expertise in IoT, AI, and pet healthcare innovation.</p>
+      </div>
+    </div>
+    
+    <div class="investor-cta" style="text-align: center; margin-bottom: 2rem;">
+      <a href="contact.html" class="btn" style="font-size: 1.2rem; padding: 1rem 2rem; background-color: #0a8778; color: white;">Invest With Us</a>
+      <a href="contact.html#investor-deck" class="btn btn-outline" style="font-size: 1.2rem; padding: 1rem 2rem; border: 2px solid #0a8778; color: #0a8778; margin-left: 1rem;">Request Investor Deck</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="section-title">
+      <h2>Key Features</h2>
+      <p>Our smart pet collar is designed to provide comprehensive health monitoring and care management.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-heartbeat feature-icon"></i>
+        <h3>Heart Rate & SpO2 Monitoring</h3>
+        <p>Continuous real-time tracking of vital signs to ensure your pet's cardiovascular health.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-location-dot feature-icon"></i>
+        <h3>Live Location Tracking</h3>
+        <p>Know where your pet is at all times with precise GPS location services.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-paw feature-icon"></i>
+        <h3>Activity Monitoring</h3>
+        <p>Track exercise, rest periods, and overall activity levels to ensure proper physical health.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-brain feature-icon"></i>
+        <h3>Early Disease Detection</h3>
+        <p>AI-powered analysis using Vertex AI to detect potential health issues before they become serious.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-bell feature-icon"></i>
+        <h3>Feeding Reminders</h3>
+        <p>Customizable alerts to maintain your pet's optimal feeding schedule.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-shield-virus feature-icon"></i>
+        <h3>Deworming Reminders</h3>
+        <p>Never miss an important medication or preventative treatment again.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Preview Section -->
+  <section class="app-preview">
+    <div class="app-content">
+      <div class="app-text">
+        <h2>Comprehensive Pet Care in Your Pocket</h2>
+        <p>Our intuitive mobile app puts all your pet's health information at your fingertips. Monitor vitals, track activity, receive intelligent health alerts, and manage care schedules with ease.</p>
+        <div class="badge-container">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="store-badge">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-badge">
+        </div>
+        <p style="margin-top: 1rem; font-style: italic;">Coming Soon</p>
+      </div>
+      <div class="app-image">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1vYmlsZSUyMGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Auroral Labs App Interface">
+      </div>
+    </div>
+  </section>
+
+  <!-- Survey Section: Place this above the footer -->
+  <section class="survey-section" id="survey">
+    <div class="container">
+      <h2>Help Shape the Future of Pet Care!</h2>
+      <p>
+        We’re conducting an <strong>active survey</strong> to understand what pet owners like you want from smart pet devices. Your feedback will directly influence the features and direction of the Auroral Labs app and device.
+      </p>
+      <ul class="survey-sample-questions">
+        <li>What type(s) of pet do you currently own?</li>
+        <li>How many pets do you have?</li>
+        <li>Which features matter most: Health Monitoring, Location Tracking, Smart Alerts, etc.?</li>
+        <li>What is the maximum amount you would be willing to spend on a comprehensive pet device?</li>
+        <li>What would increase your trust in a new pet tech startup?</li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyERg5UZ0Wy1W3fHasQOGj__o6dn6opyLhkeLJ84bvT47ZVw/viewform?usp=header" class="btn btn-primary" target="_blank" rel="noopener">Take the Survey</a>
+      <p class="survey-note">Your insights are invaluable—thank you for helping us build something amazing for pets and their people!</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="assets/images/logo.png" alt="Auroral Labs Logo">
+        </div>
+        <p>An innovative startup revolutionizing pet health monitoring technology with cutting-edge solutions.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="app.html">App</a></li>
+          <li><a href="product.html">Product</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <ul class="footer-links">
+          <li><i class="fas fa-envelope"></i> <a href="mailto:contact@aurorallabs.com">contact@aurorallabs.com</a></li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+91983535395343">+91983535395343</a></li>
+          <li><i class="fas fa-map-marker-alt"></i> VIT-AP, Amaravati, Andhra Pradesh, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Auroral Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="config.js"></script>
+  <script src="js/script.js"></script>
+  
+  <!-- Firebase CDN -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</body>
+</html> 
