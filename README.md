@@ -20,20 +20,6 @@ git push origin main
 4. Add environment variables in Vercel dashboard
 5. Deploy!
 
-## 🔧 Environment Variables for Vercel
-
-Add these environment variables in your Vercel project settings:
-
-```
-FIREBASE_API_KEY=AIzaSyBPsPMf2CIHc34yxx8L_-YFRMs5I2hC4Ok
-FIREBASE_AUTH_DOMAIN=auroral-labs.firebaseapp.com
-FIREBASE_PROJECT_ID=auroral-labs
-FIREBASE_STORAGE_BUCKET=auroral-labs.firebasestorage.app
-FIREBASE_MESSAGING_SENDER_ID=318398920981
-FIREBASE_APP_ID=1:318398920981:web:78af828889e6428225511c
-FIREBASE_MEASUREMENT_ID=G-DES6GBE94P
-MVP_LAUNCH_DATE=2025-09-30T00:00:00+05:30
-```
 
 ## 🔥 Firebase Setup
 
