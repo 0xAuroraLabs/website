@@ -8,16 +8,20 @@ if (hamburger && navLinks) {
   });
 }
 
-// Smooth Scrolling for anchor links
+// Smooth Scrolling for anchor links is now handled by Lenis in lenis.js
+// This is kept here for browsers that don't support JavaScript or as a fallback
 const links = document.querySelectorAll('a[href^="#"]');
 for (const link of links) {
-  link.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+  // Only add fallback if Lenis is not active
+  if (typeof window.lenis === 'undefined') {
+    link.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 }
 
 // Initialize Firebase (using .env configuration)

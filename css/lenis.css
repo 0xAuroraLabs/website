@@ -1,0 +1,155 @@
+/* Lenis smooth scroll styles - Enhanced for intensive scrolling */
+
+/* CSS Variables for scroll-based effects */
+:root {
+  --scroll-velocity: 0;
+  --scroll-progress: 0;
+}
+
+/* Hide scrollbar by default but keep functionality */
+html.lenis {
+  height: auto;
+  transition: background-color 0.3s ease;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+  perspective: 1000px; /* Adds depth perspective for 3D effects */
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Intensive scroll effect - apply parallax and enhanced motion to various elements */
+.intensive-scroll .hero-content,
+.intensive-scroll .section-title {
+  transform: scale(calc(1 + var(--scroll-velocity) * 0.01));
+  transition: transform 0.2s ease;
+}
+
+/* Parallax effects for background elements during intensive scrolling */
+.intensive-scroll .hero-image img,
+.intensive-scroll .section-image img {
+  transform: translateY(calc(var(--scroll-velocity) * -2px));
+  transition: transform 0.2s ease;
+}
+
+/* Enhanced custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px; /* Slightly thinner for a sleeker look */
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color)); /* Gradient scrollbar */
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced styling for elements when scrolling */
+html[data-scrolling="true"] .navbar {
+  backdrop-filter: blur(15px); /* Increased blur for more dramatic effect */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(calc(var(--scroll-velocity) * -0.5px)); /* Subtle movement based on scroll speed */
+  transition: transform 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Page transition effect based on scroll progress */
+body:after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  z-index: 9999;
+  width: calc(var(--scroll-progress) * 100%);
+  opacity: 0.8;
+  transition: width 0.1s linear;
+}
+
+/* Enhanced animation for elements appearing on scroll */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95); /* More dramatic starting position */
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform; /* Performance optimization */
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Direction-based reveals for more dynamic pages */
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal-left.active,
+.scroll-reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered animation effect for lists and grids */
+.staggered-item {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.staggered-item.active {
+  animation: staggerFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animation for items to fade in with a stagger effect */
+@keyframes staggerFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Add a subtle rotation effect during intensive scrolling */
+.intensive-scroll .card,
+.intensive-scroll .feature-item {
+  transform: perspective(1000px) rotateX(calc(var(--scroll-velocity) * -1deg));
+  transition: transform 0.3s ease;
+}
