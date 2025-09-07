@@ -1,3 +1,4 @@
+//script.js
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
@@ -166,26 +167,26 @@ function addCountdownTimer() {
     const textColor = isProductOrAppPage ? 'var(--primary-color)' : 'white';
     
     const timerText = `
-      <div class="mvp-title">🚀 MVP LAUNCHING 🚀</div>
-      <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;">
+      <div class="mvp-title">🚀MVP LAUNCHING🚀</div>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
         <div style="text-align: center;">
-          <div class="countdown-number" style="font-size: 2.5rem; display: block;">${days}</div>
-          <div style="font-size: 0.9rem; opacity: 0.8; color: ${textColor};">DAYS</div>
+          <div class="countdown-number" style="font-size: 1.5rem; display: block;">${days}</div>
+          <div style="font-size: 0.6rem; opacity: 0.8; color: ${textColor};">DAYS</div>
         </div>
-        <div style="font-size: 2rem; opacity: 0.6; color: ${textColor};">:</div>
+        <div style="font-size: 1rem; opacity: 0.6; color: ${textColor};">:</div>
         <div style="text-align: center;">
-          <div class="countdown-number" style="font-size: 2.5rem; display: block;">${hours}</div>
-          <div style="font-size: 0.9rem; opacity: 0.8; color: ${textColor};">HOURS</div>
+          <div class="countdown-number" style="font-size: 1.5rem; display: block;">${hours}</div>
+          <div style="font-size: 0.6rem; opacity: 0.8; color: ${textColor};">HOURS</div>
         </div>
-        <div style="font-size: 2rem; opacity: 0.6; color: ${textColor};">:</div>
+        <div style="font-size: 1rem; opacity: 0.6; color: ${textColor};">:</div>
         <div style="text-align: center;">
-          <div class="countdown-number" style="font-size: 2.5rem; display: block;">${minutes}</div>
-          <div style="font-size: 0.9rem; opacity: 0.8; color: ${textColor};">MINUTES</div>
+          <div class="countdown-number" style="font-size: 1.5rem; display: block;">${minutes}</div>
+          <div style="font-size: 0.6rem; opacity: 0.8; color: ${textColor};">MINUTES</div>
         </div>
-        <div style="font-size: 2rem; opacity: 0.6; color: ${textColor};">:</div>
+        <div style="font-size: 1rem; opacity: 0.6; color: ${textColor};">:</div>
         <div style="text-align: center;">
-          <div class="countdown-number" style="font-size: 2.5rem; display: block;">${seconds}</div>
-          <div style="font-size: 0.9rem; opacity: 0.8; color: ${textColor};">SECONDS</div>
+          <div class="countdown-number" style="font-size: 1.5rem; display: block;">${seconds}</div>
+          <div style="font-size: 0.6rem; opacity: 0.8; color: ${textColor};">SECONDS</div>
         </div>
       </div>
     `;

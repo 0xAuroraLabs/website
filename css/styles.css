@@ -29,6 +29,7 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+  background: var(--primary-color);
 }
 
 .navbar {
@@ -38,6 +39,7 @@ header {
   padding: 1rem 5%;
   max-width: 1400px;
   margin: 0 auto;
+  background: var(--primary-color);
 }
 
 .logo {
@@ -48,18 +50,21 @@ header {
 .logo-text {
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: white;
   margin-left: 10px;
+  text-decoration: none;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
+  
 }
 
 .nav-links li {
@@ -74,7 +79,10 @@ header {
 }
 
 .nav-links a:hover, .nav-links a.active {
-  color: var(--primary-color);
+  color: white;
+  background: var(--primary-color);
+  border-radius: 8%;
+  padding: 5%;
 }
 
 .hamburger {
@@ -298,6 +306,7 @@ header {
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
+  
 }
 
 .team-member:hover {
@@ -310,6 +319,7 @@ header {
   height: auto;
   border-radius: 10px;
   object-fit: cover;
+  height:380px;
 }
 
 .member-info {
