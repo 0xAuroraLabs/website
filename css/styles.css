@@ -491,20 +491,21 @@ footer {
 }
 
 .coming-soon h2 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
 
 .coming-soon p {
-  font-size: 1.3rem;
-  max-width: 700px;
+  font-size: 1.0rem;
+  max-width: 500px;
   margin: 0 auto 2rem;
+  text-align: justify;
 }
 
 .notify-form {
   display: flex;
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
 }
 
@@ -875,7 +876,7 @@ footer {
 
 /* MVP Launching Title */
 #mvp-countdown .mvp-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: white;
   text-shadow: 
     0 0 10px rgba(255, 255, 255, 0.8),
