@@ -2,30 +2,11 @@
   "version": 2,
   "name": "auroral-labs",
   "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "css/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "js/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "assets/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
-    }
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "css/**", "use": "@vercel/static" },
+    { "src": "js/**", "use": "@vercel/static" },
+    { "src": "assets/**", "use": "@vercel/static" },
+    { "src": "api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
     {
@@ -59,10 +40,6 @@
     {
       "src": "/terms",
       "dest": "/terms.html"
-    },
-    {
-      "src": "/api/config",
-      "dest": "/api/config.js"
-    }
+  }
   ]
 } 

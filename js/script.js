@@ -24,32 +24,18 @@ for (const link of links) {
   }
 }
 
-// Initialize Firebase (using .env configuration)
-let db = null;
-let firebaseInitialized = false;
-
-function initializeFirebase() {
-  if (typeof firebase !== 'undefined' && window.firebaseConfig && window.configLoaded) {
-    try {
-      const app = firebase.initializeApp(window.firebaseConfig);
-      db = firebase.firestore(app);
-      firebaseInitialized = true;
-      console.log('✅ Firebase initialized successfully with .env configuration');
-      return true;
-    } catch (error) {
-      console.error('❌ Firebase initialization error:', error);
-      return false;
-    }
-  } else {
-    console.warn('⚠️ Firebase not available. Waiting for .env configuration...');
-    return false;
-  }
+// Backend submission API helpers
+async function postJSON(url, data) {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
 }
 
-// Make initializeFirebase available globally
-window.initializeFirebase = initializeFirebase;
-
-// Prevent form submission for Notify forms (sends to Firebase using .env config)
+// Notify form submission -> backend endpoint
 const notifyForms = document.querySelectorAll('.notify-form');
 notifyForms.forEach(form => {
   form.addEventListener('submit', async function(e) {
@@ -62,22 +48,13 @@ notifyForms.forEach(form => {
       return;
     }
     
-    if (!firebaseInitialized || !db) {
-      alert('Firebase not initialized. Please ensure the server is running with npm start and .env file is configured.');
-      return;
-    }
-    
     try {
-      await db.collection("notifyEmails").add({ 
-        email, 
-        timestamp: new Date(),
-        source: 'notify-form'
-      });
+  await postJSON('/api/notify', { email });
       alert('✅ Thank you! You will be notified when we launch.');
       form.reset();
-      console.log('📧 Email saved to Firebase:', email);
+  console.log('📧 Email sent to backend');
     } catch (error) {
-      console.error('❌ Firebase error:', error);
+  console.error('❌ notify error:', error);
       alert('There was an error saving your email. Please try again later.');
     }
   });
@@ -99,7 +76,7 @@ if (faqItems.length > 0) {
   });
 }
 
-// Contact Form Submission (contact.html) - uses .env Firebase config
+// Contact form submission -> backend endpoint
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', async function(e) {
@@ -109,25 +86,13 @@ if (contactForm) {
     const subject = contactForm.querySelector('#subject').value;
     const message = contactForm.querySelector('#message').value;
     
-    if (!firebaseInitialized || !db) {
-      alert('Firebase not initialized. Please ensure the server is running with npm start and .env file is configured.');
-      return;
-    }
-    
     try {
-      await db.collection("contactMessages").add({
-        name,
-        email,
-        subject,
-        message,
-        timestamp: new Date(),
-        source: 'contact-form'
-      });
+  await postJSON('/api/contact', { name, email, subject, message });
       alert('✅ Thank you for contacting us! We have received your message.');
       contactForm.reset();
-      console.log('📧 Contact message saved to Firebase:', { name, email, subject });
+  console.log('📧 Contact message sent to backend');
     } catch (error) {
-      console.error('❌ Firebase error:', error);
+  console.error('❌ contact error:', error);
       alert('There was an error sending your message. Please try again later.');
     }
   });
@@ -205,28 +170,6 @@ function addCountdownTimer() {
 
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('🚀 DOM loaded, initializing application...');
-  
-  // Start timer immediately (it will use fallback date if .env not loaded yet)
+  console.log('🚀 DOM loaded');
   addCountdownTimer();
-  
-  // Try to initialize Firebase immediately, then retry after config loads
-  initializeFirebase();
-  
-  // Set up a retry mechanism for Firebase initialization
-  let retryCount = 0;
-  const maxRetries = 10;
-  const retryInterval = setInterval(() => {
-    if (firebaseInitialized) {
-      clearInterval(retryInterval);
-      console.log('✅ Firebase initialization completed');
-    } else if (retryCount < maxRetries) {
-      retryCount++;
-      console.log(`🔄 Retrying Firebase initialization (${retryCount}/${maxRetries})...`);
-      initializeFirebase();
-    } else {
-      clearInterval(retryInterval);
-      console.error('❌ Failed to initialize Firebase after maximum retries');
-    }
-  }, 2000);
-}); 
+});

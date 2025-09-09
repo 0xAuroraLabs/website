@@ -55,7 +55,6 @@ aurorallabs/
 ├── vercel.json              # Vercel configuration
 ├── .gitignore               # Git ignore rules
 ├── firestore.rules          # Firebase security rules
-├── config.js                # Production configuration
 ├── js/script.js             # Main JavaScript
 ├── css/styles.css           # Styles including timer
 ├── index.html               # Home page
@@ -71,6 +70,12 @@ aurorallabs/
 - Client-side only receives public Firebase config
 - Firestore rules restrict access to specific collections
 - No sensitive data in code repository
+
+## Configuration & Firebase
+
+Firebase web config is now directly inlined in each HTML page (see bottom of `index.html`, `app.html`, etc.) because these values are public identifiers and cannot be truly hidden in a client-only architecture. Sensitive access is still protected by Firestore security rules. No `/api/config` endpoint is used anymore.
+
+If you later move data operations server-side, replace inline config with backend endpoints using the Firebase Admin SDK and remove Firestore writes from client JS.
 
 ## 🎨 Timer Styling
 
