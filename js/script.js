@@ -49,7 +49,7 @@ notifyForms.forEach(form => {
     }
     
     try {
-  await postJSON('/api/notify', { email });
+  await postJSON('/api/notify.js', { email });
       alert('✅ Thank you! You will be notified when we launch.');
       form.reset();
   console.log('📧 Email sent to backend');
@@ -87,7 +87,7 @@ if (contactForm) {
     const message = contactForm.querySelector('#message').value;
     
     try {
-  await postJSON('/api/contact', { name, email, subject, message });
+  await postJSON('/api/contact.js', { name, email, subject, message });
       alert('✅ Thank you for contacting us! We have received your message.');
       contactForm.reset();
   console.log('📧 Contact message sent to backend');
