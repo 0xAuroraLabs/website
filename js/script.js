@@ -35,46 +35,71 @@ async function postJSON(url, data) {
   return res.json();
 }
 
-// Toast notification system
-function showToast(message, type = 'success', duration = 3500) {
-  let toastContainer = document.getElementById('toast-container');
-  if (!toastContainer) {
-    toastContainer = document.createElement('div');
-    toastContainer.id = 'toast-container';
-    toastContainer.style.position = 'fixed';
-    toastContainer.style.left = '50%';
-    toastContainer.style.top = '50%';
-    toastContainer.style.transform = 'translate(-50%, -50%)';
-    toastContainer.style.zIndex = '9999';
-    toastContainer.style.display = 'flex';
-    toastContainer.style.flexDirection = 'column';
-    toastContainer.style.alignItems = 'center';
-    toastContainer.style.gap = '12px';
-    document.body.appendChild(toastContainer);
+// Custom Modal notification system
+function showNotification(title, message, type = 'success') {
+  const modal = document.getElementById('notification-modal');
+  const titleEl = document.getElementById('notification-title');
+  const textEl = document.getElementById('notification-text');
+  const iconEl = modal.querySelector('.notification-icon i');
+  
+  titleEl.textContent = title;
+  textEl.textContent = message;
+  
+  // Update icon based on type
+  if (type === 'error') {
+    iconEl.className = 'fas fa-exclamation-circle';
+    iconEl.parentElement.classList.add('error');
+  } else {
+    iconEl.className = 'fas fa-check-circle';
+    iconEl.parentElement.classList.remove('error');
   }
-  const toast = document.createElement('div');
-  toast.className = 'toast ' + type;
-  toast.textContent = message;
-  toast.style.padding = '14px 24px';
-  toast.style.borderRadius = '8px';
-  toast.style.background = '#fff'; // white background
-  toast.style.color = '#222'; // black text
-  toast.style.fontWeight = 'bold';
-  toast.style.boxShadow = '0 2px 8px rgba(0,0,0,0.12)';
-  toast.style.opacity = '0';
-  toast.style.transform = 'scale(0.95)'; // animate scale in center
-  toast.style.transition = 'opacity 0.3s, transform 0.3s';
+  
+  modal.classList.add('show');
+  
+  // Auto close after 4 seconds
   setTimeout(() => {
-    toast.style.opacity = '1';
-    toast.style.transform = 'scale(1)';
-  }, 10);
-  toastContainer.appendChild(toast);
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transform = 'scale(0.95)';
-    setTimeout(() => toast.remove(), 300);
-  }, duration);
+    closeNotification();
+  }, 4000);
 }
+
+function closeNotification() {
+  const modal = document.getElementById('notification-modal');
+  modal.classList.remove('show');
+}
+
+// Button loading state
+function setButtonLoading(button, loading = true) {
+  if (loading) {
+    button.classList.add('btn-loading');
+    if (!button.querySelector('.btn-text')) {
+      button.innerHTML = `<span class="btn-text">${button.textContent}</span>`;
+    }
+  } else {
+    button.classList.remove('btn-loading');
+    const textSpan = button.querySelector('.btn-text');
+    if (textSpan) {
+      button.textContent = textSpan.textContent;
+    }
+  }
+}
+
+// Initialize modal close functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const closeBtn = document.getElementById('notification-close');
+  const modal = document.getElementById('notification-modal');
+  
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeNotification);
+  }
+  
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeNotification();
+      }
+    });
+  }
+});
 
 // Notify form submission -> backend endpoint
 const notifyForms = document.querySelectorAll('.notify-form');
@@ -82,21 +107,28 @@ notifyForms.forEach(form => {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
     const emailInput = form.querySelector('input[type="email"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
     const email = emailInput ? emailInput.value : '';
     
     if (!email) {
-      showToast('Please enter a valid email address.', 'error');
+      showNotification('Invalid Email', 'Please enter a valid email address.', 'error');
       return;
     }
     
+    // Show loading state
+    setButtonLoading(submitBtn, true);
+    
     try {
       await postJSON('/api/notify.js', { email });
-      showToast('Thank you! You will be notified when we launch.', 'success');
+      showNotification('Success!', 'Thank you! You will be notified when we launch.');
       form.reset();
       console.log('📧 Email sent to backend');
     } catch (error) {
       console.error('❌ notify error:', error);
-      showToast('There was an error saving your email. Please try again later.', 'error');
+      showNotification('Error', 'There was an error saving your email. Please try again later.', 'error');
+    } finally {
+      // Remove loading state
+      setButtonLoading(submitBtn, false);
     }
   });
 });
@@ -126,15 +158,22 @@ if (contactForm) {
     const email = contactForm.querySelector('#email').value;
     const subject = contactForm.querySelector('#subject').value;
     const message = contactForm.querySelector('#message').value;
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    
+    // Show loading state
+    setButtonLoading(submitBtn, true);
     
     try {
       await postJSON('/api/contact.js', { name, email, subject, message });
-      showToast('Thank you for contacting us! We have received your message.', 'success');
+      showNotification('Message Sent!', 'Thank you for contacting us! We have received your message.');
       contactForm.reset();
       console.log('📧 Contact message sent to backend');
     } catch (error) {
       console.error('❌ contact error:', error);
-      showToast('There was an error sending your message. Please try again later.', 'error');
+      showNotification('Error', 'There was an error sending your message. Please try again later.', 'error');
+    } finally {
+      // Remove loading state
+      setButtonLoading(submitBtn, false);
     }
   });
 }
