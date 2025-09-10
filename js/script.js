@@ -42,7 +42,7 @@ function showToast(message, type = 'success', duration = 3500) {
     toastContainer = document.createElement('div');
     toastContainer.id = 'toast-container';
     toastContainer.style.position = 'fixed';
-    toastContainer.style.top = '24px';
+    toastContainer.style.bottom = '24px'; // changed from top to bottom
     toastContainer.style.right = '24px';
     toastContainer.style.zIndex = '9999';
     toastContainer.style.display = 'flex';
@@ -55,12 +55,12 @@ function showToast(message, type = 'success', duration = 3500) {
   toast.textContent = message;
   toast.style.padding = '14px 24px';
   toast.style.borderRadius = '8px';
-  toast.style.background = type === 'success' ? 'linear-gradient(90deg,#2ed8a7,#1dc8e9)' : '#ff4d4f';
-  toast.style.color = 'white';
+  toast.style.background = '#fff'; // white background
+  toast.style.color = '#222'; // black text
   toast.style.fontWeight = 'bold';
   toast.style.boxShadow = '0 2px 8px rgba(0,0,0,0.12)';
   toast.style.opacity = '0';
-  toast.style.transform = 'translateY(-20px)';
+  toast.style.transform = 'translateY(20px)'; // animate up from bottom
   toast.style.transition = 'opacity 0.3s, transform 0.3s';
   setTimeout(() => {
     toast.style.opacity = '1';
@@ -69,7 +69,7 @@ function showToast(message, type = 'success', duration = 3500) {
   toastContainer.appendChild(toast);
   setTimeout(() => {
     toast.style.opacity = '0';
-    toast.style.transform = 'translateY(-20px)';
+    toast.style.transform = 'translateY(20px)';
     setTimeout(() => toast.remove(), 300);
   }, duration);
 }
@@ -83,18 +83,18 @@ notifyForms.forEach(form => {
     const email = emailInput ? emailInput.value : '';
     
     if (!email) {
-      showToast('⚠️ Please enter a valid email address.', 'error');
+      showToast('Please enter a valid email address.', 'error');
       return;
     }
     
     try {
       await postJSON('/api/notify.js', { email });
-      showToast('✅ Thank you! You will be notified when we launch.', 'success');
+      showToast('Thank you! You will be notified when we launch.', 'success');
       form.reset();
       console.log('📧 Email sent to backend');
     } catch (error) {
       console.error('❌ notify error:', error);
-      showToast('❌ There was an error saving your email. Please try again later.', 'error');
+      showToast('There was an error saving your email. Please try again later.', 'error');
     }
   });
 });
@@ -127,12 +127,12 @@ if (contactForm) {
     
     try {
       await postJSON('/api/contact.js', { name, email, subject, message });
-      showToast('✅ Thank you for contacting us! We have received your message.', 'success');
+      showToast('Thank you for contacting us! We have received your message.', 'success');
       contactForm.reset();
       console.log('📧 Contact message sent to backend');
     } catch (error) {
       console.error('❌ contact error:', error);
-      showToast('❌ There was an error sending your message. Please try again later.', 'error');
+      showToast('There was an error sending your message. Please try again later.', 'error');
     }
   });
 }
