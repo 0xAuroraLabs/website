@@ -5,16 +5,6 @@ let configLoaded = false;
 
 // Optional static fallback (used when /api/config not reachable, e.g. Live Server)
 // These Firebase values are PUBLIC identifiers (not secrets). If you rotate them, update here.
-const fallbackFirebaseConfig = {
-  apiKey: 'AIzaSyBPsPMf2CIHc34yxx8L_-YFRMs5I2hC4Ok',
-  authDomain: 'auroral-labs.firebaseapp.com',
-  projectId: 'auroral-labs',
-  storageBucket: 'auroral-labs.firebasestorage.app',
-  messagingSenderId: '318398920981',
-  appId: '1:318398920981:web:78af828889e6428225511c',
-  measurementId: 'G-DES6GBE94P'
-};
-const fallbackLaunchDate = '2025-09-30T00:00:00+05:30';
 
 // Load configuration from environment variables via API with fallbacks
 async function loadConfiguration() {
