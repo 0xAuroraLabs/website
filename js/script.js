@@ -42,11 +42,13 @@ function showToast(message, type = 'success', duration = 3500) {
     toastContainer = document.createElement('div');
     toastContainer.id = 'toast-container';
     toastContainer.style.position = 'fixed';
-    toastContainer.style.bottom = '24px'; // changed from top to bottom
-    toastContainer.style.right = '24px';
+    toastContainer.style.left = '50%';
+    toastContainer.style.top = '50%';
+    toastContainer.style.transform = 'translate(-50%, -50%)';
     toastContainer.style.zIndex = '9999';
     toastContainer.style.display = 'flex';
     toastContainer.style.flexDirection = 'column';
+    toastContainer.style.alignItems = 'center';
     toastContainer.style.gap = '12px';
     document.body.appendChild(toastContainer);
   }
@@ -60,16 +62,16 @@ function showToast(message, type = 'success', duration = 3500) {
   toast.style.fontWeight = 'bold';
   toast.style.boxShadow = '0 2px 8px rgba(0,0,0,0.12)';
   toast.style.opacity = '0';
-  toast.style.transform = 'translateY(20px)'; // animate up from bottom
+  toast.style.transform = 'scale(0.95)'; // animate scale in center
   toast.style.transition = 'opacity 0.3s, transform 0.3s';
   setTimeout(() => {
     toast.style.opacity = '1';
-    toast.style.transform = 'translateY(0)';
+    toast.style.transform = 'scale(1)';
   }, 10);
   toastContainer.appendChild(toast);
   setTimeout(() => {
     toast.style.opacity = '0';
-    toast.style.transform = 'translateY(20px)';
+    toast.style.transform = 'scale(0.95)';
     setTimeout(() => toast.remove(), 300);
   }, duration);
 }
