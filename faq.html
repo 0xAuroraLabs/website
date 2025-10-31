@@ -11,12 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <!-- FAQ Page CSS -->
+  <link rel="stylesheet" href="css/faq.css">
   <!-- Lenis Smooth Scrolling CSS -->
   <link rel="stylesheet" href="css/lenis.css">
 </head>
-<body class="lenis lenis-smooth">
+<body class="lenis lenis-smooth faq-page">
   <!-- Header & Navigation -->
   <header>
     <nav class="navbar">
@@ -39,129 +43,278 @@
     </nav>
   </header>
 
-  <!-- FAQ Section -->
-  <section class="faq">
-    <div class="section-title">
-      <h2>Frequently Asked Questions</h2>
-      <p>Find answers to common questions about our pet health monitoring technology.</p>
+  <!-- FAQ Hero Section -->
+  <section class="faq-hero">
+    <div class="faq-hero-content">
+      <h1 data-aos="fade-up">Frequently Asked Questions</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Find answers to common questions about our revolutionary pet health monitoring technology.</p>
+      
+      <div class="search-box" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search questions..." id="faqSearch">
+      </div>
+
+      <div class="faq-categories" data-aos="fade-up" data-aos-delay="600">
+        <button class="category-btn active" data-category="all">All Questions</button>
+        <button class="category-btn" data-category="product">Product</button>
+        <button class="category-btn" data-category="technical">Technical</button>
+        <button class="category-btn" data-category="shipping">Shipping & Returns</button>
+        <button class="category-btn" data-category="support">Support</button>
+      </div>
     </div>
-    
+  </section>
+
+  <!-- FAQ Content Section -->
+  <section class="faq-content">
     <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Is this a student project or a commercial product?</h3>
-          <i class="fas fa-chevron-down"></i>
+      <div class="faq-category-group" data-category="product">
+        <h3 class="category-title" data-aos="fade-right">Product Questions</h3>
+        <div class="faq-item" data-aos="fade-up">
+          <div class="faq-question">
+            <h3>Is this a student project or a commercial product?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Auroral Labs is a legitimate startup company developing innovative pet health monitoring solutions. Our team consists of talented professionals with expertise in various fields including IoT, AI, and veterinary health. We are currently in MVP development stage and actively seeking investors to help bring our revolutionary technology to market. This is a commercial venture with the goal of transforming pet healthcare through advanced technology.</p>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>Auroral Labs is a legitimate startup company developing innovative pet health monitoring solutions. Our team consists of talented professionals with expertise in various fields including IoT, AI, and veterinary health. We are currently in MVP development stage and actively seeking investors to help bring our revolutionary technology to market. This is a commercial venture with the goal of transforming pet healthcare through advanced technology.</p>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-question">
+            <h3>How does the pet health monitoring collar work?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our collar uses advanced sensors to continuously monitor your pet's vital signs, including heart rate and blood oxygen levels (SpO2). The data is transmitted to our app via Bluetooth or WiFi, where our AI algorithms analyze patterns and detect potential health issues. The collar also includes GPS tracking for real-time location monitoring.</p>
+          </div>
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>How does the pet health monitoring collar work?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Our collar uses advanced sensors to continuously monitor your pet's vital signs, including heart rate and blood oxygen levels (SpO2). The data is transmitted to our app via Bluetooth or WiFi, where our AI algorithms analyze patterns and detect potential health issues. The collar also includes GPS tracking for real-time location monitoring.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Is the collar comfortable for my pet?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Yes! We've designed our collar with pet comfort as a top priority. It's lightweight, adjustable, and made from soft, durable materials that won't irritate your pet's skin. The sensors are designed to maintain contact without applying uncomfortable pressure.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>How accurate is the health monitoring technology?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Our health monitoring sensors have been developed in collaboration with veterinary professionals and offer high accuracy comparable to professional veterinary equipment. The early disease detection features have been trained on thousands of animal health datasets to identify patterns that may indicate health issues.</p>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-question">
+            <h3>Is the collar comfortable for my pet?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We've designed our collar with pet comfort as a top priority. It's lightweight, adjustable, and made from soft, durable materials that won't irritate your pet's skin. The sensors are designed to maintain contact without applying uncomfortable pressure.</p>
+          </div>
         </div>
       </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>How long does the battery last?</h3>
-          <i class="fas fa-chevron-down"></i>
+
+      <div class="faq-category-group" data-category="technical">
+        <h3 class="category-title" data-aos="fade-right">Technical Questions</h3>
+        <div class="faq-item" data-aos="fade-up">
+          <div class="faq-question">
+            <h3>How accurate is the health monitoring technology?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our health monitoring sensors have been developed in collaboration with veterinary professionals and offer high accuracy comparable to professional veterinary equipment. The early disease detection features have been trained on thousands of animal health datasets to identify patterns that may indicate health issues.</p>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>The battery life depends on usage patterns, but typically lasts 5-7 days on a single charge with normal monitoring settings. Using GPS tracking more frequently may reduce battery life. The collar comes with a fast-charging magnetic charger that fully recharges the device in about 90 minutes.</p>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-question">
+            <h3>How long does the battery last?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>The battery life depends on usage patterns, but typically lasts 5-7 days on a single charge with normal monitoring settings. Using GPS tracking more frequently may reduce battery life. The collar comes with a fast-charging magnetic charger that fully recharges the device in about 90 minutes.</p>
+          </div>
         </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Is the collar water-resistant?</h3>
-          <i class="fas fa-chevron-down"></i>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-question">
+            <h3>Is the collar water-resistant?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, our collar is designed with an IP67 water resistance rating, making it splashproof and able to withstand brief submersion in water up to 1 meter for 30 minutes. This means it's protected during rainy walks or if your pet decides to take a quick dip.</p>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>Yes, our collar is designed with an IP67 water resistance rating, making it splashproof and able to withstand brief submersion in water up to 1 meter for 30 minutes. This means it's protected during rainy walks or if your pet decides to take a quick dip.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>How does the AI disease detection work?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Our AI uses Vertex AI technology to analyze patterns in your pet's vital signs, activity levels, and behavior. It compares this data against known indicators of various health conditions to identify potential issues before they become serious. The system continuously learns and improves as more data is collected.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>What kind of subscription plans will you offer?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>We plan to offer several subscription tiers: Basic (vital monitoring and GPS), Premium (includes AI health insights and unlimited data history), and Family Plan (multiple pets with premium features). All plans include app access, and we'll offer both monthly and annual billing options with discounts for annual subscriptions.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>When will the product be available for purchase?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>We're currently in the MVP development stage and anticipate launching our product within the next 6-8 months. You can join our waitlist to be among the first to be notified when pre-orders begin and to receive exclusive early adopter discounts.</p>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="faq-question">
+            <h3>How does the AI disease detection work?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our AI uses Vertex AI technology to analyze patterns in your pet's vital signs, activity levels, and behavior. It compares this data against known indicators of various health conditions to identify potential issues before they become serious. The system continuously learns and improves as more data is collected.</p>
+          </div>
         </div>
       </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>Will the app work with both iOS and Android devices?</h3>
-          <i class="fas fa-chevron-down"></i>
+
+      <!-- Shipping & Returns Section -->
+      <div class="faq-category-group" data-category="shipping">
+        <h3 class="category-title" data-aos="fade-right">Shipping & Returns</h3>
+        <div class="faq-item" data-aos="fade-up">
+          <div class="faq-question">
+            <h3>What shipping options do you offer?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer several shipping options to meet your needs:</p>
+            <ul>
+              <li><strong>Standard Shipping:</strong> 5-7 business days</li>
+              <li><strong>Express Shipping:</strong> 2-3 business days</li>
+              <li><strong>Overnight Shipping:</strong> Next business day</li>
+            </ul>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>Yes, our app will be available for both iOS and Android platforms. We're developing both versions simultaneously to ensure all pet owners can access our technology regardless of their device preference.</p>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-question">
+            <h3>How much does shipping cost?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our shipping rates are as follows:</p>
+            <ul>
+              <li>Free standard shipping on orders over $50</li>
+              <li>Standard: $4.99 (for orders under $50)</li>
+              <li>Express: $9.99</li>
+              <li>Overnight: $19.99</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-question">
+            <h3>Do you ship internationally?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We currently ship to all 50 U.S. states. International shipping is not available at this time, but we plan to expand to select countries in the future.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="faq-question">
+            <h3>What is your return policy?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer a 30-day return policy from the delivery date for a full refund, and 60 days for store credit or exchange. Items must be in original condition with packaging and tags included.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="faq-question">
+            <h3>How do I initiate a return?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>To return an item:</p>
+            <ol>
+              <li>Log into your account and visit the Returns section</li>
+              <li>Print the prepaid return label</li>
+              <li>Package your items securely</li>
+              <li>Drop off at any authorized shipping location</li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="faq-question">
+            <h3>What items cannot be returned?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>For hygiene reasons, the following items cannot be returned:</p>
+            <ul>
+              <li>Final sale items</li>
+              <li>Personalized products</li>
+              <li>Undergarments</li>
+              <li>Opened health monitoring accessories</li>
+            </ul>
+          </div>
         </div>
       </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>How secure is my pet's health data?</h3>
-          <i class="fas fa-chevron-down"></i>
+
+      <div class="faq-category-group" data-category="support">
+        <h3 class="category-title" data-aos="fade-right">Support & Services</h3>
+        <div class="faq-item" data-aos="fade-up">
+          <div class="faq-question">
+            <h3>What kind of subscription plans will you offer?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We plan to offer several subscription tiers: Basic (vital monitoring and GPS), Premium (includes AI health insights and unlimited data history), and Family Plan (multiple pets with premium features). All plans include app access, and we'll offer both monthly and annual billing options with discounts for annual subscriptions.</p>
+          </div>
         </div>
-        <div class="faq-answer">
-          <p>We take data security very seriously. All health data is encrypted during transmission and storage. Our cloud infrastructure uses industry-leading security measures, and we will never share your pet's health information with third parties without your explicit consent.</p>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-question">
+            <h3>When will the product be available for purchase?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We're currently in the MVP development stage and anticipate launching our product within the next 6-8 months. You can join our waitlist to be among the first to be notified when pre-orders begin and to receive exclusive early adopter discounts.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-question">
+            <h3>Will the app work with both iOS and Android devices?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, our app will be available for both iOS and Android platforms. We're developing both versions simultaneously to ensure all pet owners can access our technology regardless of their device preference.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="faq-question">
+            <h3>How secure is my pet's health data?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We take data security very seriously. All health data is encrypted during transmission and storage. Our cloud infrastructure uses industry-leading security measures, and we will never share your pet's health information with third parties without your explicit consent.</p>
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="more-questions" style="text-align: center; margin-top: 3rem;">
-      <h3>Still have questions?</h3>
-      <p>We're happy to help! Reach out to our team for personalized assistance.</p>
-      <a href="contact.html" class="btn">Contact Us</a>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="faq-cta">
+    <div class="cta-container">
+      <div class="cta-content" data-aos="fade-up">
+        <h2>Still Have Questions?</h2>
+        <p>Can't find what you're looking for? Our support team is here to help you with any questions about our products and services.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">
+            <i class="fas fa-envelope"></i>
+            Contact Support
+          </a>
+          <a href="mailto:support@aurorallabs.com" class="btn btn-outline">
+            <i class="fas fa-headset"></i>
+            Email Support
+          </a>
+        </div>
+      </div>
+      <div class="cta-features" data-aos="fade-left" data-aos-delay="200">
+        <div class="feature-item">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h4>24/7 Support</h4>
+            <p>Round-the-clock assistance for urgent matters</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <div>
+            <h4>Secure & Private</h4>
+            <p>Your data is protected with enterprise-grade security</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-rocket"></i>
+          <div>
+            <h4>Fast Response</h4>
+            <p>Average response time under 2 hours</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -206,10 +359,29 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Custom Notification Modal -->
+  <div id="notification-modal" class="notification-modal">
+    <div class="notification-content">
+      <div class="notification-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="notification-message">
+        <h3 id="notification-title">Success!</h3>
+        <p id="notification-text">Your message has been sent successfully.</p>
+      </div>
+      <button id="notification-close" class="notification-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>window.MVP_LAUNCH_DATE='2025-09-30T00:00:00+05:30';</script>
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Lenis Smooth Scrolling -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
   <script src="js/lenis.js"></script>
+  <script src="js/faq.js"></script>
   <script src="js/script.js"></script>
 </body>
-</html> 
+</html>

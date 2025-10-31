@@ -11,32 +11,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/app.css">
   <!-- Lenis Smooth Scrolling CSS -->
   <link rel="stylesheet" href="css/lenis.css">
-  <style>
-    h2{
-      text-align: center;
-      font-size: 5px;
-      margin-bottom: 1rem;
-    }
-    .coming-soon-title{
-      font-size: 1px;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .features-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-    
-  </style>
-  <!-- Custom CSS -->
-  
 </head>
 <body class="app-page lenis lenis-smooth">
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <img src="assets/images/logo.png" alt="Auroral Labs Logo">
+        <h2>Auroral Labs</h2>
+      </div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Header & Navigation -->
   <header>
     <nav class="navbar">
@@ -59,54 +55,216 @@
     </nav>
   </header>
 
-  <!-- App Coming Soon Section -->
-  <section class="coming-soon">
-    <h2 class="coming-soon-title">App Coming Soon!</h2>
-    <p>Our mobile app is currently in development. We're designing an intuitive, feature-rich experience that will revolutionize pet healthcare management.</p>
-    
-    <div class="app-features">
-      <div class="section-title">
-        <h3>App Features</h3>
+  <!-- App Hero Section -->
+  <section class="app-hero">
+    <div class="app-hero-content">
+      <div class="app-hero-text" data-aos="fade-right">
+        <div class="app-badge">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Mobile App Coming Soon</span>
+        </div>
+        <h1>Revolutionary Pet Care <span class="text-gradient">in Your Pocket</span></h1>
+        <p>Our mobile app is currently in development. We're designing an intuitive, feature-rich experience that will revolutionize pet healthcare management with cutting-edge technology.</p>
+        
+        <div class="app-stats">
+          <div class="app-stat">
+            <span class="stat-number" data-count="24">0</span>
+            <span class="stat-label">/7 Monitoring</span>
+          </div>
+          <div class="app-stat">
+            <span class="stat-number" data-count="50">0</span>
+            <span class="stat-label">+ Features</span>
+          </div>
+          <div class="app-stat">
+            <span class="stat-number" data-count="2">0</span>
+            <span class="stat-label">Platforms</span>
+          </div>
+        </div>
+
+        <div class="app-badges">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="store-badge">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-badge">
+        </div>
+
+        <div class="coming-soon-badge">
+          <i class="fas fa-clock"></i>
+          <span>Launching Q4 2025</span>
+        </div>
       </div>
-      <div class="features-grid">
-        <div class="feature-card">
+      
+      <div class="app-hero-image" data-aos="fade-left" data-aos-delay="200">
+        <div class="phone-mockup-container">
+          <div class="phone-mockup">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9iaWxlJTIwYXBwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="App Mockup">
+            <div class="phone-frame"></div>
+            <div class="app-screen-overlay">
+              <div class="live-indicators">
+                <div class="indicator heart-rate">
+                  <i class="fas fa-heartbeat"></i>
+                  <span>72 BPM</span>
+                </div>
+                <div class="indicator activity">
+                  <i class="fas fa-running"></i>
+                  <span>Active</span>
+                </div>
+                <div class="indicator location">
+                  <i class="fas fa-location-dot"></i>
+                  <span>Home</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Features Section -->
+  <section class="app-features-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Powerful App <span class="text-gradient">Features</span></h2>
+      <p>Experience comprehensive pet care management with our feature-rich mobile application</p>
+    </div>
+    
+    <div class="app-features-grid">
+      <div class="app-feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon-container">
           <i class="fas fa-home feature-icon"></i>
-          <h3>Home Dashboard</h3>
-          <p>Pet profile, live vitals monitoring, quick access to essential functions, and activity notifications.</p>
+          <div class="icon-glow"></div>
         </div>
-        <div class="feature-card">
+        <h3>Home Dashboard</h3>
+        <p>Pet profile, live vitals monitoring, quick access to essential functions, and activity notifications.</p>
+        <div class="feature-highlights">
+          <span class="highlight">Real-time Data</span>
+          <span class="highlight">Quick Actions</span>
+        </div>
+      </div>
+      
+      <div class="app-feature-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="feature-icon-container">
           <i class="fas fa-map-location-dot feature-icon"></i>
-          <h3>Activity Tracking</h3>
-          <p>GPS location tracking, movement history, steps counter, rest hours, and calories burned.</p>
+          <div class="icon-glow"></div>
         </div>
-        <div class="feature-card">
+        <h3>Activity Tracking</h3>
+        <p>GPS location tracking, movement history, steps counter, rest hours, and calories burned.</p>
+        <div class="feature-highlights">
+          <span class="highlight">GPS Tracking</span>
+          <span class="highlight">Activity Logs</span>
+        </div>
+      </div>
+      
+      <div class="app-feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon-container">
           <i class="fas fa-heart-pulse feature-icon"></i>
-          <h3>Health Analytics</h3>
-          <p>Comprehensive vitals charts, early disease detection insights, risk assessments, and vet contact feature.</p>
+          <div class="icon-glow"></div>
         </div>
-        <div class="feature-card">
+        <h3>Health Analytics</h3>
+        <p>Comprehensive vitals charts, early disease detection insights, risk assessments, and vet contact feature.</p>
+        <div class="feature-highlights">
+          <span class="highlight">AI Analysis</span>
+          <span class="highlight">Health Trends</span>
+        </div>
+      </div>
+      
+      <div class="app-feature-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="feature-icon-container">
           <i class="fas fa-bell feature-icon"></i>
-          <h3>Smart Reminders</h3>
-          <p>Customizable feeding schedules, deworming dates, medication reminders, and notification preferences.</p>
+          <div class="icon-glow"></div>
         </div>
-        <div class="feature-card">
+        <h3>Smart Reminders</h3>
+        <p>Customizable feeding schedules, deworming dates, medication reminders, and notification preferences.</p>
+        <div class="feature-highlights">
+          <span class="highlight">Custom Alerts</span>
+          <span class="highlight">Scheduling</span>
+        </div>
+      </div>
+      
+      <div class="app-feature-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-icon-container">
           <i class="fas fa-gear feature-icon"></i>
-          <h3>Settings</h3>
-          <p>Pet profile management, owner information, device pairing, WiFi/BLE settings, and subscription management.</p>
+          <div class="icon-glow"></div>
+        </div>
+        <h3>Settings & Management</h3>
+        <p>Pet profile management, owner information, device pairing, WiFi/BLE settings, and subscription management.</p>
+        <div class="feature-highlights">
+          <span class="highlight">Profile Management</span>
+          <span class="highlight">Device Control</span>
+        </div>
+      </div>
+      
+      <div class="app-feature-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="feature-icon-container">
+          <i class="fas fa-shield-alt feature-icon"></i>
+          <div class="icon-glow"></div>
+        </div>
+        <h3>Security & Privacy</h3>
+        <p>End-to-end encryption, secure data storage, privacy controls, and compliance with data protection regulations.</p>
+        <div class="feature-highlights">
+          <span class="highlight">Encryption</span>
+          <span class="highlight">Privacy First</span>
         </div>
       </div>
     </div>
-    
-    <div style="margin-top: 3rem;">
-      <h3 style="margin-bottom: 1rem;">Get Notified When We Launch</h3>
-      <form class="notify-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Notify Me</button>
-      </form>
+  </section>
+
+  <!-- App Screenshots Section -->
+  <section class="app-screenshots">
+    <div class="section-title" data-aos="fade-up">
+      <h2>App <span class="text-gradient">Interface</span> Preview</h2>
+      <p>Get a glimpse of our intuitive and user-friendly mobile application design</p>
     </div>
     
-    <div class="app-mockups" style="margin-top: 4rem;">
-      <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9iaWxlJTIwYXBwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="App Mockup" style="max-width: 80%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    <div class="screenshots-container">
+      <div class="screenshot-slider">
+        <div class="screenshot-item" data-aos="zoom-in">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1vYmlsZSUyMGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Dashboard Screen">
+          <div class="screenshot-caption">Dashboard Overview</div>
+        </div>
+        <div class="screenshot-item" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9iaWxlJTIwYXBwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Health Analytics">
+          <div class="screenshot-caption">Health Analytics</div>
+        </div>
+        <div class="screenshot-item" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vYmlsZSUyMGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="Activity Tracking">
+          <div class="screenshot-caption">Activity Tracking</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notify Section -->
+  <section class="app-notify-section">
+    <div class="notify-container" data-aos="fade-up">
+      <div class="notify-content">
+        <h2>Be the First to Know</h2>
+        <p>Join our waitlist to get early access, exclusive launch discounts, and be notified when the app becomes available.</p>
+        
+        <form class="notify-form-app">
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Enter your email address" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large">
+            <i class="fas fa-bell"></i>
+            Notify Me
+          </button>
+        </form>
+        
+        <div class="notify-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-gift"></i>
+            <span>Early Access</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-percent"></i>
+            <span>Launch Discount</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-star"></i>
+            <span>Exclusive Updates</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -168,11 +326,12 @@
   </div>
 
   <script>window.MVP_LAUNCH_DATE='2025-11-30T00:00:00+05:30';</script>
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Lenis Smooth Scrolling -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
   <script src="js/lenis.js"></script>
   <script src="js/script.js"></script>
-  
-  <!-- Firebase CDN -->
+  <script src="js/app.js"></script>
 </body>
-</html> 
+</html>

@@ -1,0 +1,508 @@
+/* App Page Specific Styles */
+.app-page .app-hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 8rem 5% 6rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-page .app-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.app-page .app-hero-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.app-page .app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.app-page .app-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.app-page .app-hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.app-page .app-stats {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.app-page .app-stat {
+  text-align: center;
+}
+
+.app-page .app-stat .stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.app-page .app-stat .stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.app-page .app-badges {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.app-page .store-badge {
+  height: 60px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  filter: grayscale(0.3);
+  opacity: 0.8;
+}
+
+.app-page .store-badge:hover {
+  transform: scale(1.1);
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.app-page .coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.app-page .phone-mockup-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-page .phone-mockup {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: var(--shadow-large);
+  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  transition: all 0.5s ease;
+  animation: float-phone 6s ease-in-out infinite;
+}
+
+.app-page .phone-mockup:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+.app-page .phone-mockup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-page .phone-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 12px solid #1a1a1a;
+  border-radius: 40px;
+  pointer-events: none;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.app-page .app-screen-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(8, 112, 94, 0.1), rgba(31, 200, 219, 0.1));
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.app-page .live-indicators {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.app-page .indicator {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--dark-color);
+  backdrop-filter: blur(10px);
+  animation: pulse 2s infinite;
+}
+
+.app-page .indicator i {
+  color: var(--primary-color);
+}
+
+/* App Features Section */
+.app-page .app-features-section {
+  padding: 6rem 5%;
+  background: var(--light-color);
+}
+
+.app-page .app-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-page .app-feature-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-page .app-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  transition: transform 0.4s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.app-page .app-feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.app-page .app-feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-large);
+}
+
+.app-page .feature-icon-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.app-page .app-feature-card .feature-icon {
+  font-size: 3.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.app-page .app-feature-card:hover .feature-icon {
+  transform: scale(1.2);
+}
+
+.app-page .icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(10px);
+}
+
+.app-page .app-feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+.app-page .app-feature-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.app-page .feature-highlights {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.app-page .highlight {
+  background: var(--light-color);
+  color: var(--primary-color);
+  padding: 0.4rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(8, 112, 94, 0.2);
+}
+
+/* App Screenshots Section */
+.app-page .app-screenshots {
+  padding: 6rem 5%;
+  background: white;
+}
+
+.app-page .screenshots-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.app-page .screenshot-slider {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.app-page .screenshot-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
+  max-width: 300px;
+}
+
+.app-page .screenshot-item:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-large);
+}
+
+.app-page .screenshot-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+.app-page .screenshot-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Notify Section */
+.app-page .app-notify-section {
+  padding: 6rem 5%;
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.app-page .notify-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app-page .notify-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.app-page .notify-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.app-page .notify-form-app {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.app-page .input-group {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+}
+
+.app-page .input-group i {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.app-page .input-group input {
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 3rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.app-page .input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.app-page .input-group input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.app-page .notify-benefits {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.app-page .benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+/* Animations */
+@keyframes float-phone {
+  0%, 100% {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(-20px);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .app-page .app-hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .app-page .app-hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .app-page .phone-mockup {
+    transform: none;
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-page .app-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .app-page .app-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .app-page .app-features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-page .notify-form-app {
+    flex-direction: column;
+  }
+  
+  .app-page .input-group {
+    min-width: 100%;
+  }
+  
+  .app-page .screenshot-slider {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-page .app-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .app-page .app-feature-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .app-page .phone-mockup {
+    width: 250px;
+    height: 500px;
+  }
+}

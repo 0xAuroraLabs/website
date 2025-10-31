@@ -11,12 +11,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/product.css">
   <!-- Lenis Smooth Scrolling CSS -->
   <link rel="stylesheet" href="css/lenis.css">
 </head>
-<body class="product-page">
+<body class="product-page lenis lenis-smooth">
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <img src="assets/images/logo.png" alt="Auroral Labs Logo">
+        <h2>Auroral Labs</h2>
+      </div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Header & Navigation -->
   <header>
     <nav class="navbar">
@@ -39,70 +55,259 @@
     </nav>
   </header>
 
-  <!-- Coming Soon Section -->
-  <section class="coming-soon">
-    <h2>Product Coming Soon</h2>
-    <p>Our innovative pet health monitoring collar is currently in development. Join our waiting list to be the first to know when it launches!</p>
-    
-    <div style="margin-top: 3rem;">
-      <form class="notify-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Notify Me</button>
-      </form>
-    </div>
-    
-    <div style="margin: 5rem auto; max-width: 800px;">
-      <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBldCUyMGNvbGxhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="Smart Pet Collar" style="max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+  <!-- Product Hero Section -->
+  <section class="product-hero">
+    <div class="product-hero-content">
+      <div class="product-hero-text" data-aos="fade-right">
+        <div class="product-badge">
+          <i class="fas fa-rocket"></i>
+          <span>Next Generation Pet Tech</span>
+        </div>
+        <h1>Smart Health <span class="text-gradient">Monitoring Collar</span></h1>
+        <p>Our innovative pet health monitoring collar is currently in development. Experience the future of pet care with advanced sensors, AI-powered analytics, and real-time health tracking.</p>
+        
+        <div class="product-stats">
+          <div class="product-stat">
+            <span class="stat-number" data-count="24">0</span>
+            <span class="stat-label">/7 Monitoring</span>
+          </div>
+          <div class="product-stat">
+            <span class="stat-number" data-count="99">0</span>
+            <span class="stat-label">% Accuracy</span>
+          </div>
+          <div class="product-stat">
+            <span class="stat-number" data-count="7">0</span>
+            <span class="stat-label">Day Battery</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#notify" class="btn btn-primary btn-large">
+            <i class="fas fa-bell"></i>
+            Join Waitlist
+          </a>
+          <a href="#specifications" class="btn btn-outline btn-large">
+            <i class="fas fa-info-circle"></i>
+            Learn More
+          </a>
+        </div>
+      </div>
+      
+      <div class="product-hero-image" data-aos="fade-left" data-aos-delay="200">
+        <div class="product-showcase">
+          <div class="collar-mockup">
+            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBldCUyMGNvbGxhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="Smart Pet Collar">
+            <div class="product-glow"></div>
+          </div>
+          <div class="floating-elements">
+            <div class="floating-element heart-rate">
+              <i class="fas fa-heartbeat"></i>
+              <span>Heart Rate</span>
+            </div>
+            <div class="floating-element gps">
+              <i class="fas fa-location-dot"></i>
+              <span>GPS Tracking</span>
+            </div>
+            <div class="floating-element activity">
+              <i class="fas fa-running"></i>
+              <span>Activity</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Product Features -->
-  <section class="features" style="background-color: #f8f9fa;">
-    <div class="section-title">
-      <h2>Product Specifications</h2>
-      <p>Our pet health monitoring collar combines advanced hardware with intelligent software.</p>
-    </div>
-    
-    <div class="features-grid">
-      <div class="feature-card">
-        <i class="fas fa-microchip feature-icon"></i>
-        <h3>Advanced Sensors</h3>
-        <p>State-of-the-art sensors to accurately monitor heart rate, SpO2, and other vital signs.</p>
-      </div>
-      
-      <div class="feature-card">
-        <i class="fas fa-satellite feature-icon"></i>
-        <h3>GPS Technology</h3>
-        <p>Precision GPS tracking with real-time location updates and movement history.</p>
-      </div>
-      
-      <div class="feature-card">
-        <i class="fas fa-battery-full feature-icon"></i>
-        <h3>Long Battery Life</h3>
-        <p>Extended battery performance to ensure continuous monitoring without frequent charging.</p>
-      </div>
-      
-      <div class="feature-card">
-        <i class="fas fa-wifi feature-icon"></i>
-        <h3>Connectivity</h3>
-        <p>Seamless Bluetooth and WiFi connectivity for reliable data transmission to mobile app.</p>
-      </div>
-      
-      <div class="feature-card">
-        <i class="fas fa-shield-alt feature-icon"></i>
-        <h3>Durable Design</h3>
-        <p>Water-resistant, lightweight, and comfortable design suitable for pets of all sizes.</p>
-      </div>
-      
-      <div class="feature-card">
-        <i class="fas fa-brain feature-icon"></i>
-        <h3>AI Analytics</h3>
-        <p>Advanced algorithms for health data analysis and early detection of potential issues.</p>
+  <!-- MVP Countdown Section -->
+  <section class="mvp-countdown-section">
+    <div class="countdown-container" data-aos="zoom-in">
+      <div class="countdown-content">
+        <h3>Product Launch Countdown</h3>
+        <div id="mvp-countdown">
+          <div class="countdown-grid">
+            <div class="countdown-item">
+              <span class="countdown-value" id="days">00</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="hours">00</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="minutes">00</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="seconds">00</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+        </div>
+        <p>Be among the first to experience revolutionary pet health monitoring</p>
       </div>
     </div>
+  </section>
+
+  <!-- Product Specifications Section -->
+  <section class="product-specifications" id="specifications">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Advanced <span class="text-gradient">Specifications</span></h2>
+      <p>Our pet health monitoring collar combines cutting-edge hardware with intelligent software for comprehensive pet care.</p>
+    </div>
     
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="contact.html" class="btn">Pre-Order Now</a>
+    <div class="specs-grid">
+      <div class="spec-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="spec-icon">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <h3>Advanced Sensor Array</h3>
+        <p>State-of-the-art sensors to accurately monitor heart rate, SpO2, temperature, and respiratory rate with medical-grade precision.</p>
+        <div class="spec-details">
+          <span class="spec-tag">Medical Grade</span>
+          <span class="spec-tag">Real-time Data</span>
+        </div>
+      </div>
+      
+      <div class="spec-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="spec-icon">
+          <i class="fas fa-satellite-dish"></i>
+        </div>
+        <h3>Precision GPS Tracking</h3>
+        <p>Dual-frequency GPS with real-time location updates, geofencing, and movement history with accuracy up to 3 meters.</p>
+        <div class="spec-details">
+          <span class="spec-tag">Dual GPS</span>
+          <span class="spec-tag">Geofencing</span>
+        </div>
+      </div>
+      
+      <div class="spec-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="spec-icon">
+          <i class="fas fa-battery-full"></i>
+        </div>
+        <h3>Extended Battery Life</h3>
+        <p>7-day battery life with fast charging technology. 2-hour full charge provides week-long continuous monitoring.</p>
+        <div class="spec-details">
+          <span class="spec-tag">7 Days</span>
+          <span class="spec-tag">Fast Charge</span>
+        </div>
+      </div>
+      
+      <div class="spec-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="spec-icon">
+          <i class="fas fa-wifi"></i>
+        </div>
+        <h3>Multi-Connectivity</h3>
+        <p>Seamless Bluetooth 5.2, WiFi 6, and cellular connectivity for reliable data transmission and remote monitoring.</p>
+        <div class="spec-details">
+          <span class="spec-tag">Bluetooth 5.2</span>
+          <span class="spec-tag">WiFi 6</span>
+        </div>
+      </div>
+      
+      <div class="spec-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="spec-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Durable & Comfortable</h3>
+        <p>IP68 water-resistant, lightweight titanium alloy frame, and hypoallergenic materials for all-day comfort.</p>
+        <div class="spec-details">
+          <span class="spec-tag">IP68</span>
+          <span class="spec-tag">Titanium</span>
+        </div>
+      </div>
+      
+      <div class="spec-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="spec-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3>AI Health Analytics</h3>
+        <p>Advanced machine learning algorithms for health data analysis and early detection of potential health issues.</p>
+        <div class="spec-details">
+          <span class="spec-tag">AI Powered</span>
+          <span class="spec-tag">Early Detection</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Showcase -->
+  <section class="technology-showcase">
+    <div class="tech-container">
+      <div class="tech-content" data-aos="fade-right">
+        <h2>Revolutionary <span class="text-gradient">Technology</span></h2>
+        <p>Our collar integrates multiple cutting-edge technologies to provide comprehensive health monitoring and peace of mind for pet owners.</p>
+        
+        <div class="tech-features">
+          <div class="tech-feature">
+            <i class="fas fa-heart-circle-check"></i>
+            <div>
+              <h4>Vital Signs Monitoring</h4>
+              <p>Continuous tracking of heart rate, oxygen levels, and activity patterns</p>
+            </div>
+          </div>
+          <div class="tech-feature">
+            <i class="fas fa-location-crosshairs"></i>
+            <div>
+              <h4>Precision Location</h4>
+              <p>Advanced GPS with real-time tracking and safe zone alerts</p>
+            </div>
+          </div>
+          <div class="tech-feature">
+            <i class="fas fa-cloud-arrow-up"></i>
+            <div>
+              <h4>Cloud Analytics</h4>
+              <p>Secure cloud storage with AI-powered health insights</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tech-visual" data-aos="fade-left" data-aos-delay="200">
+        <div class="tech-animation">
+          <div class="animation-core">
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring delay-1"></div>
+            <div class="pulse-ring delay-2"></div>
+            <i class="fas fa-paw"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notify Section -->
+  <section class="product-notify-section" id="notify">
+    <div class="notify-container" data-aos="fade-up">
+      <div class="notify-content">
+        <h2>Join the <span class="text-gradient">Waitlist</span></h2>
+        <p>Be the first to experience our revolutionary pet health monitoring collar. Early subscribers get exclusive launch discounts and priority access.</p>
+        
+        <form class="notify-form-product">
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Enter your email address" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large">
+            <i class="fas fa-rocket"></i>
+            Join Waitlist
+          </button>
+        </form>
+        
+        <div class="waitlist-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-gem"></i>
+            <span>Early Access</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-tag"></i>
+            <span>Exclusive Discount</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Priority Shipping</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -164,11 +369,12 @@
   </div>
 
   <script>window.MVP_LAUNCH_DATE='2025-11-30T00:00:00+05:30';</script>
-  <script src="js/script.js"></script>
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Lenis Smooth Scrolling -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
   <script src="js/lenis.js"></script>
-
-  <!-- Firebase CDN -->
+  <script src="js/script.js"></script>
+  <script src="js/product.js"></script>
 </body>
-</html> 
+</html>

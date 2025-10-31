@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Auroral Labs</title>
+  <title>Contact Us | Auroral Labs - Premium Pet Health Monitoring</title>
   <link rel="icon" type="image/png" href="assets/images/logo.png">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contact.css">
   <!-- Lenis Smooth Scrolling CSS -->
   <link rel="stylesheet" href="css/lenis.css">
 </head>
-<body class="lenis lenis-smooth">
+<body class="lenis lenis-smooth contact-page">
   <!-- Header & Navigation -->
   <header>
     <nav class="navbar">
@@ -39,103 +42,179 @@
     </nav>
   </header>
 
+  <!-- Floating Elements -->
+  <div class="contact-floating-elements">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+  </div>
+
   <!-- Contact Section -->
   <section class="contact">
-    <div class="section-title">
+    <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
       <h2>Get In Touch</h2>
-      <p>Have questions about our products, investment opportunities, or partnership inquiries? Reach out to our team.</p>
+      <p>Experience premium support and connect with our team of pet health technology experts</p>
     </div>
+    
     <div class="contact-container">
-      <div class="contact-info">
+      <!-- Contact Information -->
+      <div class="contact-info" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
         <h3>Contact Information</h3>
-        <p>We'd love to hear from you. Get in touch with our team for any inquiries or potential partnerships.</p>
+        <p>We're committed to providing exceptional service. Reach out to our dedicated team for personalized assistance with our premium pet health monitoring solutions.</p>
+        
         <div class="contact-details">
-          <p>
+          <p data-aos="fade-up" data-aos-delay="300">
             <i class="fas fa-map-marker-alt"></i>
-            <span>VIT-AP, Amaravati, Andhra Pradesh, India</span>
+            <span>VIT-AP University Campus, Amaravati, Andhra Pradesh 522237, India</span>
           </p>
-          <p>
+          <p data-aos="fade-up" data-aos-delay="400">
             <i class="fas fa-envelope"></i>
             <a href="mailto:contact@aurorallabs.com">contact@aurorallabs.com</a>
           </p>
-          <p>
+          <p data-aos="fade-up" data-aos-delay="500">
             <i class="fas fa-phone"></i>
-            <a href="tel:+919835395343">+91 9835395343</a>
+            <a href="tel:+919835395343">+91 98353 95343</a>
           </p>
-          <p>
+          <p data-aos="fade-up" data-aos-delay="600">
             <i class="fas fa-clock"></i>
-            <span>Monday - Friday: 9:00 AM - 6:00 PM</span>
+            <span>Monday - Friday: 9:00 AM - 6:00 PM IST</span>
           </p>
         </div>
         
-        <div class="social-links" style="margin-top: 2rem;">
-          <a href="#" style="margin-right: 1.5rem;"><i class="fab fa-linkedin fa-2x"></i></a>
-          <a href="#" style="margin-right: 1.5rem;"><i class="fab fa-twitter fa-2x"></i></a>
-          <a href="#" style="margin-right: 1.5rem;"><i class="fab fa-instagram fa-2x"></i></a>
-          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+        <div class="business-hours" data-aos="fade-up" data-aos-delay="700">
+          <h4><i class="fas fa-business-time"></i> Business Hours</h4>
+          <p><span>Monday - Friday:</span> 9:00 AM - 6:00 PM</p>
+          <p><span>Saturday:</span> 10:00 AM - 4:00 PM</p>
+          <p><span>Sunday:</span> <em>Emergency Support Only</em></p>
+        </div>
+        
+        <div class="social-links-contact" data-aos="fade-up" data-aos-delay="800">
+          <a href="#" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="Follow on Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="Follow on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="Like on Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
       
-      <div class="contact-form">
+      <!-- Contact Form -->
+      <div class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
         <h3>Send Us A Message</h3>
         <form id="contactForm">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
+          <div class="form-group" data-aos="fade-up" data-aos-delay="300">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            <div class="error-message">Please enter your name</div>
           </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
+          
+          <div class="form-group" data-aos="fade-up" data-aos-delay="400">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            <div class="error-message">Please enter a valid email address</div>
           </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
+          
+          <div class="form-group" data-aos="fade-up" data-aos-delay="500">
+            <label for="subject">Inquiry Type *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select inquiry type</option>
+              <option value="general">General Inquiry</option>
+              <option value="product">Product Information</option>
+              <option value="investment">Investment Opportunity</option>
+              <option value="partnership">Partnership</option>
+              <option value="support">Technical Support</option>
+              <option value="press">Press & Media</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="error-message">Please select an inquiry type</div>
           </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+          
+          <div class="form-group" data-aos="fade-up" data-aos-delay="600">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+            <div class="error-message">Please enter your message</div>
           </div>
-          <div class="form-group">
-            <button type="submit" class="btn">Send Message</button>
+          
+          <div class="form-group" data-aos="fade-up" data-aos-delay="700">
+            <button type="submit" class="btn btn-primary">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
           </div>
         </form>
+        
+        <div class="contact-success" id="contactSuccess">
+          <i class="fas fa-check-circle"></i>
+          <h3>Message Sent Successfully!</h3>
+          <p>Thank you for contacting Auroral Labs. Our team will review your message and get back to you within 24 hours. We're excited to help you with your pet health monitoring needs.</p>
+          <button class="btn btn-outline" id="sendAnother">
+            Send Another Message
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Investor Section -->
-  <section class="investor" style="padding: 4rem 5%;">
-    <div class="section-title">
+  <!-- Premium Investor Section -->
+  <section class="investor">
+    <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
       <h2>Investor Relations</h2>
-      <p>We're currently seeking strategic investors who share our vision for revolutionizing pet healthcare.</p>
+      <p>Join us in revolutionizing pet healthcare through innovative technology and strategic partnerships</p>
     </div>
-    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-      <p style="margin-bottom: 2rem;">If you're interested in investment opportunities with Auroral Labs, please contact our CEO directly at <a href="mailto:ceo@aurorallabs.com">ceo@aurorallabs.com</a> or schedule a meeting below.</p>
-      <a href="#" class="btn">Schedule Meeting</a>
+    
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      <p style="margin-bottom: 2.5rem; font-size: 1.2rem; line-height: 1.7;">
+        We're actively seeking visionary investors who share our passion for transforming pet healthcare. 
+        For investment opportunities with Auroral Labs, please contact our executive team directly at 
+        <a href="mailto:ceo@aurorallabs.com" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">
+          ceo@aurorallabs.com
+        </a> 
+        or schedule a strategic meeting below.
+      </p>
+      <div class="investor-actions" data-aos="zoom-in" data-aos-delay="400">
+        <a href="mailto:ceo@aurorallabs.com?subject=Strategic%20Investment%20Inquiry&body=Hello%20Auroral%20Labs%20Team,%0A%0AI'm%20interested%20in%20learning%20more%20about%20investment%20opportunities%20with%20your%20innovative%20pet%20health%20technology." 
+           class="btn btn-primary" style="margin: 0 1rem;">
+          <i class="fas fa-handshake"></i>
+          Schedule Strategic Meeting
+        </a>
+        <a href="assets/docs/auroral-labs-investor-deck.pdf" class="btn btn-outline" style="margin: 0 1rem;" download>
+          <i class="fas fa-file-download"></i>
+          Download Investor Deck
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Map Section -->
-  <section class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.095749331695!2d80.34203552576754!3d16.062326937403118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f27d40f21c55%3A0x1490eacaea7d19d0!2sVIT-AP%20University!5e0!3m2!1sen!2sin!4v1718651934833!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- Premium Map Section -->
+  <section class="map" data-aos="fade-up" data-aos-duration="1000">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.095749331695!2d80.34203552576754!3d16.062326937403118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f27d40f21c55%3A0x1490eacaea7d19d0!2sVIT-AP%20University!5e0!3m2!1sen!2sin!4v1718651934833!5m2!1sen!2sin" 
+            width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" title="Auroral Labs Headquarters - VIT-AP University Campus">
+    </iframe>
   </section>
 
-  <!-- Footer -->
+  <!-- Premium Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-section">
         <div class="footer-logo">
           <img src="assets/images/logo.png" alt="Auroral Labs Logo">
+          <h3>Auroral Labs</h3>
         </div>
-        <p>An innovative startup revolutionizing pet health monitoring technology with cutting-edge solutions.</p>
+        <p>Revolutionizing pet healthcare through cutting-edge AI and IoT technology. Premium health monitoring solutions for your beloved companions.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
       <div class="footer-section">
         <h4>Quick Links</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#features">Features</a></li>
-          <li><a href="app.html">App</a></li>
-          <li><a href="product.html">Product</a></li>
+          <li><a href="app.html">Mobile App</a></li>
+          <li><a href="product.html">Smart Collar</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -151,17 +230,22 @@
         <h4>Contact Us</h4>
         <ul class="footer-links">
           <li><i class="fas fa-envelope"></i> <a href="mailto:contact@aurorallabs.com">contact@aurorallabs.com</a></li>
-          <li><i class="fas fa-phone"></i> <a href="tel:+919835395343">+919835395343</a></li>
-          <li><i class="fas fa-map-marker-alt"></i> VIT-AP, Amaravati, Andhra Pradesh, India</li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+919835395343">+91 98353 95343</a></li>
+          <li><i class="fas fa-map-marker-alt"></i> VIT-AP University, Amaravati</li>
         </ul>
       </div>
     </div>
     <div class="copyright">
-      <p>&copy; 2025 Auroral Labs. All rights reserved.</p>
+      <p>&copy; 2025 Auroral Labs. All rights reserved. Premium Pet Health Technology.</p>
     </div>
   </footer>
 
-  <!-- Custom Notification Modal -->
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Premium Notification Modal -->
   <div id="notification-modal" class="notification-modal">
     <div class="notification-content">
       <div class="notification-icon">
@@ -169,7 +253,7 @@
       </div>
       <div class="notification-message">
         <h3 id="notification-title">Success!</h3>
-        <p id="notification-text">Your message has been sent successfully.</p>
+        <p id="notification-text">Your message has been sent successfully to our premium support team.</p>
       </div>
       <button id="notification-close" class="notification-close">
         <i class="fas fa-times"></i>
@@ -178,11 +262,12 @@
   </div>
 
   <script>window.MVP_LAUNCH_DATE='2025-09-30T00:00:00+05:30';</script>
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Lenis Smooth Scrolling -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
   <script src="js/lenis.js"></script>
   <script src="js/script.js"></script>
-  
-  <!-- Firebase CDN -->
+  <script src="js/contact.js"></script>
 </body>
-</html> 
+</html>
